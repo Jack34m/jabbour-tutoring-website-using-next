@@ -1,24 +1,35 @@
 // pages/sitemap.xml.ts
 
 import { GetServerSideProps } from "next";
-import { getAllPosts } from "@/lib/posts"; // your blog post fetching logic
+import { getAllPosts } from "@/lib/posts"; // blog post fetching logic
 import { SitemapStream, streamToPromise } from "sitemap";
 import { Readable } from "stream";
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const baseUrl = "https://www.jabbourtutoring.com";
+  const today = new Date().toISOString();
 
   // Get blog posts
   const posts = getAllPosts(); // returns [{ slug: 'post-title', date: '2025-08-09' }, ...]
 
-  // Static routes
+  // Static pages with optional lastmod
   const staticPages = [
-    "",
-    "about",
-    "contact",
-    "blog",
-    "tutoring-in-hammana",
-    "tutoring-in-zouk-mosbeh",
+    { url: "", changefreq: "monthly", priority: 1.0 },
+    { url: "about", changefreq: "monthly", priority: 0.8 },
+    { url: "contact", changefreq: "monthly", priority: 0.8 },
+    { url: "blog", changefreq: "weekly", priority: 0.8 },
+    {
+      url: "tutoring-in-hammana",
+      changefreq: "weekly",
+      priority: 0.9,
+      lastmod: today,
+    },
+    {
+      url: "tutoring-in-zouk-mosbeh",
+      changefreq: "weekly",
+      priority: 0.9,
+      lastmod: today,
+    },
   ];
 
   const smStream = new SitemapStream({ hostname: baseUrl });
@@ -26,9 +37,10 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   // Add static pages
   staticPages.forEach((page) => {
     smStream.write({
-      url: `/${page}`,
-      changefreq: "monthly",
-      priority: page === "" ? 1.0 : 0.8,
+      url: `/${page.url}`,
+      changefreq: page.changefreq,
+      priority: page.priority,
+      lastmod: page.lastmod || today, // gives all pages a fresh lastmod date
     });
   });
 
