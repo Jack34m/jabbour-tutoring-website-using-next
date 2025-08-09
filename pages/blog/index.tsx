@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { getSortedPostsData } from "../../lib/posts";
+import { getAllPosts } from "../../lib/posts";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -85,10 +85,6 @@ export default function Blog({ allPostsData }: BlogProps) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
+  const allPostsData = getAllPosts();
+  return { props: { allPostsData } };
 }

@@ -4,64 +4,41 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-type BlogPostProps = {
+interface PostProps {
   postData: {
     slug: string;
     title: string;
     date: string;
-    coverImage?: string;
     contentHtml: string;
-    excerpt?: string;
+    coverImage?: string | null;
   };
-};
+}
 
-export default function BlogPost({ postData }: BlogPostProps) {
-  const metaDescription =
-    postData.excerpt || `Read ${postData.title} on Jabbour Tutoring's Blog.`;
-
+export default function Post({ postData }: PostProps) {
   return (
     <>
       <Head>
         <title>{postData.title} | Jabbour Tutoring</title>
-        <meta name="description" content={metaDescription} />
-        <meta
-          name="keywords"
-          content={`tutoring, education, ${postData.title}`}
-        />
-        <meta property="og:title" content={postData.title} />
-        <meta property="og:description" content={metaDescription} />
-        {postData.coverImage && (
-          <meta property="og:image" content={postData.coverImage} />
-        )}
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={`https://jabbourtutoring.com/blog/${postData.slug}`}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={postData.title} />
-        <meta name="twitter:description" content={metaDescription} />
-        {postData.coverImage && (
-          <meta name="twitter:image" content={postData.coverImage} />
-        )}
+        <meta name="description" content={`Read: ${postData.title}`} />
       </Head>
-
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-10">
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+        <p className="text-gray-500 mb-8">
+          {new Date(postData.date).toLocaleDateString()}
+        </p>
+
         {postData.coverImage && (
           <img
             src={postData.coverImage}
             alt={postData.title}
-            className="w-full h-64 object-cover rounded-lg mb-6"
+            className="w-full h-auto rounded-lg shadow mb-8"
           />
         )}
-        <h1 className="text-4xl font-bold mb-2">{postData.title}</h1>
-        <p className="text-gray-500 mb-6">
-          {new Date(postData.date).toLocaleDateString()}
-        </p>
+
         <article
-          className="prose max-w-none"
+          className="prose prose-lg max-w-none"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
       </main>
@@ -73,10 +50,17 @@ export default function BlogPost({ postData }: BlogPostProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
-  return { paths, fallback: false };
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postData = await getPostData(params?.slug as string);
-  return { props: { postData } };
+  return {
+    props: {
+      postData,
+    },
+  };
 };
