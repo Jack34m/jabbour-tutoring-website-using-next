@@ -1,15 +1,20 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Link from "next/link"
 
 export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Services | Jabbour Tutoring</title>
+        <title>Jabbour Tutoring: English, Mathematics and Science lessons</title>
         <meta
           name="description"
-          content="Discover our personalized private tutoring services, available online or in-person for students of all levels across all Lebanon."
+          content="Discover our personalized private tutoring services covering English, Math and Science. Available online or in-person for all Lebanese students."
+        />
+        <meta
+        property="og:description"
+        content="Private Math, English & Science tutoring in Hammana & Dbayeh. Flexible in-person or online sessions to fit your schedule."
         />
       </Head>
       <Navbar />
@@ -28,9 +33,7 @@ export default function ServicesPage() {
                 Online Tutoring
               </h2>
               <p className="text-sm text-gray-600">
-                Learn from the comfort and convenience of your home through Zoom
-                or Google Meet. Online tutoring is available across all of
-                Lebanon.
+                Learn from the comfort and convenience of your home! Online private lessons are available for all <Link href="/subjects" className="text-green-600 underline hover:text-yellow-300">subjects</Link> at all levels.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -38,8 +41,7 @@ export default function ServicesPage() {
                 In-Person Tutoring
               </h2>
               <p className="text-sm text-gray-600">
-                For students in our area, we offer in-person tutoring at our
-                tutoring center. For select students, we may offer home visits.
+                For students in our area, we offer in-person tutoring at Hammana and Dbayeh. For select students, we offer home visits. For students who may require home visits, we kindly ask that you <Link href="/contact" className="text-green-600 underline hover:text-yellow-300">reach out</Link>.
               </p>
             </div>
           </div>

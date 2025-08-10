@@ -45,10 +45,16 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact Us | Jabbour Tutoring</title>
+        <title>
+          Contact us at Jabbour Tutoring, based in Hammana and Dbayeh
+        </title>
         <meta
           name="description"
-          content="Reach out to Jabbour Tutoring by WhatsApp or Email. Schedule your consultation call today."
+          content="Feel free to reach out to us by what's up or email. Get your free consultation today for any private lessons in mathematics, science, and english. "
+        />
+        <meta
+        property="og:description"
+        content="Get in touch for private Math, English & Science lessons in Hammana & Dbayeh. In-person & online tutoring available."
         />
       </Head>
       <Navbar />
@@ -64,15 +70,15 @@ export default function ContactPage() {
               target="_blank"
               className="text-green-700 font-semibold hover:underline"
             >
-              +961 70 278 248
+              +961 71 855 369
             </a>
-            <p>OR</p>
+            <br></br>
             <a
               href="https://wa.me/96171855369"
               target="_blank"
               className="text-green-700 font-semibold hover:underline"
             >
-              +961 71 855 369
+              +961 70 278 248
             </a>
           </p>
           <p className="text-base md:text-lg text-gray-700 mb-10">

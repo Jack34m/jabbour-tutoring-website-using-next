@@ -3,15 +3,20 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
     <>
       <Head>
-        <title>About Us | Jabbour Tutoring</title>
+        <title>The start of Jabbour Tutoring</title>
         <meta
           name="description"
-          content="Meet the founders of Jabbour Tutoring — a mother-son team offering tailored academic help to Lebanese students. Lebanese official exam help included. High quality private math and physics tutoring."
+          content="Learn about Jabbour Tutoring, a family-run service offering personalized Math, English, and Science lessons in Hammana and Dbayeh, Lebanon."
+        />
+        <meta
+        property="og:description"
+        content="Family-run tutoring service in Hammana & Dbayeh offering tailored Math, English & Science lessons for all Lebanese students."
         />
       </Head>
 
@@ -20,14 +25,27 @@ export default function AboutPage() {
       <main className="min-h-screen bg-gradient-to-b from-green-100 to-white text-gray-800 font-[Inter]">
         <section className="py-16 px-4 sm:px-6 max-w-5xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl font-[Playfair Display] font-bold text-green-800 mb-6">
-            Meet the Team
+            Meet the Tutors
           </h1>
           <h3 className="text-base sm:text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
-            Jabbour Tutoring is a private tutoring center proudly co-owned and
-            operated by a mother and son team dedicated to helping students rise
-            to new academic heights in English, Mathematics, and Physics. We
-            bring passion, patience, and personalized strategies to every
-            lesson.
+            Jabbour Tutoring is a newly established tutoring service with
+            locations in both Hammana and Dbayeh. Our{" "}
+            <Link
+              href="/services"
+              className="text-green-600 underline hover:text-yellow-300"
+            >
+              services
+            </Link>{" "}
+            include{" "}
+            <Link
+              href="/subjects"
+              className="text-green-600 underline hover:text-yellow-300"
+            >
+              English, Math, and Science{" "}
+            </Link>{" "}
+            lessons for all grades. Our key focus is always on problem-solving,
+            development and academic catch-up. We bring passion, patience, and
+            personalized strategies to every lesson.
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
@@ -36,7 +54,7 @@ export default function AboutPage() {
               <div className="w-40 h-40 mb-4 rounded-full overflow-hidden">
                 <Image
                   src="/james.jpg"
-                  alt="James Jabbour"
+                  alt="James Jabbour tutor"
                   width={160}
                   height={160}
                   className="object-cover w-full h-full"
@@ -46,10 +64,9 @@ export default function AboutPage() {
                 James Jabbour
               </h2>
               <p className="text-sm text-gray-600 mt-2">
-                Math and Physics tutor. James is a third-year civil engineering
-                student at NDU. With over 2 years of tutoring experience, James
-                anticipates where students might get stuck and helps them move
-                forward.
+                James is a private Mathematics and Physics tutor with over 3
+                years of tutoring experience. In his spare time, James enjoys
+                studying, reading and working out.
               </p>
             </div>
 
@@ -58,7 +75,7 @@ export default function AboutPage() {
               <div className="w-40 h-40 mb-4 rounded-full overflow-hidden">
                 <Image
                   src="/nicole.jpg"
-                  alt="Nicole Jabbour"
+                  alt="Nicole Jabbour tutor"
                   width={160}
                   height={160}
                   className="object-cover w-full h-full"
@@ -68,10 +85,10 @@ export default function AboutPage() {
                 Nicole Jabbour
               </h2>
               <p className="text-sm text-gray-600 mt-2">
-                English and Math tutor. Nicole holds a graduate degree in
-                English and a post-grad in teaching from AUST. She has over 4
-                years of tutoring experience and enjoys writing poems in her
-                free time.
+                Nicole is a private English and Mathematics tutor. As a proud
+                graduate from AUST, Nicole holds 2 degrees in teaching, with
+                over 7 years of tutoring experience. In her spare time, she
+                enjoys writing poetry.
               </p>
             </div>
           </div>

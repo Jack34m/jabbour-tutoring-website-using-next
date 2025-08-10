@@ -23,16 +23,12 @@ export default function Blog({ allPostsData }: BlogProps) {
         <title>Our Blog | Jabbour Tutoring</title>
         <meta
           name="description"
-          content="Read expert tutoring tips, learning strategies, and academic insights from Jabbour Tutoring."
-        />
-        <meta
-          name="keywords"
-          content="tutoring blog, education tips, learning strategies, academic blog"
+          content="Education tips, study strategies, and subject roadmaps from Jabbour Tutoring. Resources for students in Hammana, Dbayeh, and across Lebanon."
         />
         <meta property="og:title" content="Our Blog | Jabbour Tutoring" />
         <meta
           property="og:description"
-          content="Expert tutoring tips, study guides, and educational insights from Jabbour Tutoring."
+          content="Study tips & resources from Jabbour Tutoring for students in Hammana, Dbayeh & all over Lebanon."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jabbourtutoring.com/blog" />

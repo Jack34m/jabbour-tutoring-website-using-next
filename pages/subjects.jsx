@@ -6,10 +6,10 @@ export default function SubjectsPage() {
   return (
     <>
       <Head>
-        <title>Subjects | Jabbour Tutoring</title>
+        <title>English, Mathematics and Science roadmaps</title>
         <meta
           name="description"
-          content="Explore the subjects we specialize in — Math, English, and Physics — for students of all levels in Lebanon."
+          content="Explore the subjects we cover for all Lebanese students. English, Math and Physics lessons are available in person or online."
         />
       </Head>
       <Navbar />
@@ -20,8 +20,9 @@ export default function SubjectsPage() {
           </h1>
           <p className="text-base md:text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
             At Jabbour Tutoring, we offer expert guidance in Math, English, and
-            Physics. Whether you're preparing for exams or looking to boost your
-            confidence, we're here to help.
+            Physics. Whether you're preparing for exams, looking to catch up
+            academically, or just wanting to boost your confidence, we're here
+            to help.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -29,8 +30,9 @@ export default function SubjectsPage() {
                 Mathematics
               </h2>
               <p className="text-sm text-gray-600">
-                From elementary to high school — we cover algebra, geometry,
-                trigonometry, and calculus.
+                We cover all elementary, middle school and high-school
+                mathematics. The most popular areas of math tutoring among our
+                clients are algebra, geometry,trigonometry, and calculus.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -38,8 +40,9 @@ export default function SubjectsPage() {
                 English
               </h2>
               <p className="text-sm text-gray-600">
-                Reading, writing, grammar, and literature — helping students
-                develop fluency and confidence.
+                We offer a wide-range of English services for non-native English
+                speakers and beginners. Our program focusses primarily on
+                reading, writing, grammar, pronunciation and literature.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -47,8 +50,10 @@ export default function SubjectsPage() {
                 Physics
               </h2>
               <p className="text-sm text-gray-600">
-                Breaking down complex physics concepts and building strong
-                problem-solving skills.
+                We offer Physics for all middle school and high school students.
+                Our Physics program follows that of the Lebanese cirriculum. The
+                most popular service among our clients is the Physics official
+                exam preparation roadmap.
               </p>
             </div>
           </div>
