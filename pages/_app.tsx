@@ -2,8 +2,19 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import { useEffect } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    // Force all <img> in Markdown to lazy-load
+    const imgs = document.querySelectorAll("article img");
+    imgs.forEach((img) => {
+      if (!img.getAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+    });
+  }, []);
+
   return (
     <>
       {/* Google Analytics */}
@@ -19,6 +30,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'G-7J5M99WEQ1');
         `}
       </Script>
+
       <Component {...pageProps} />
     </>
   );
