@@ -62,7 +62,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/tutoring-in-dbaye"
+                href="/tutoring-in-Dbayeh"
                 className="hover:text-blue-600 font-medium"
               >
                 Dbayeh (Metn District)

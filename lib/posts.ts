@@ -21,6 +21,9 @@ export function getAllPosts() {
       title: data.title || "Untitled",
       date: data.date || new Date().toISOString(),
       coverImage: data.coverImage || null,
+      description: data.description || "",
+      keywords: data.keywords || [],
+      author: data.author || "Jabbour Tutoring",
     };
   });
 }
@@ -44,7 +47,6 @@ export async function getPostData(slug: string) {
   const { data, content } = matter(fileContents);
 
   const processedContent = await remark().use(html).process(content);
-
   const contentHtml = processedContent.toString();
 
   return {
@@ -53,5 +55,8 @@ export async function getPostData(slug: string) {
     title: data.title || "Untitled",
     date: data.date || new Date().toISOString(),
     coverImage: data.coverImage || null,
+    description: data.description || "",
+    keywords: data.keywords || [],
+    author: data.author || "Jabbour Tutoring",
   };
 }

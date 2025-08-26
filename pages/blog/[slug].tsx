@@ -13,16 +13,72 @@ interface PostProps {
     date: string;
     contentHtml: string;
     coverImage?: string | null;
+    description?: string;
+    keywords?: string[];
+    author?: string;
   };
 }
 
 export default function Post({ postData }: PostProps) {
+  const url = `https://www.jabbourtutoring.com/blog/${postData.slug}`;
+  const image =
+    postData.coverImage || "https://www.jabbourtutoring.com/logo.png";
+
   return (
     <>
       <Head>
+        {/* Standard SEO */}
         <title>{postData.title} | Jabbour Tutoring</title>
-        <meta name="description" content={`Read: ${postData.title}`} />
+        <meta
+          name="description"
+          content={postData.description || `Read: ${postData.title}`}
+        />
+        {postData.keywords && postData.keywords.length > 0 && (
+          <meta name="keywords" content={postData.keywords.join(", ")} />
+        )}
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={postData.title} />
+        <meta property="og:description" content={postData.description || ""} />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={postData.title} />
+        <meta name="twitter:description" content={postData.description || ""} />
+        <meta name="twitter:image" content={image} />
+
+        {/* Schema.org structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: postData.title,
+              description: postData.description || "",
+              author: {
+                "@type": "Person",
+                name: postData.author || "Jabbour Tutoring",
+              },
+              datePublished: postData.date,
+              image: [image],
+              mainEntityOfPage: url,
+              publisher: {
+                "@type": "Organization",
+                name: "Jabbour Tutoring",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.jabbourtutoring.com/logo.png",
+                },
+              },
+            }),
+          }}
+        />
       </Head>
+
       <Navbar />
 
       <main className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -64,18 +120,11 @@ export default function Post({ postData }: PostProps) {
 // Generate all possible slugs
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
+  return { paths, fallback: false };
 };
 
 // Fetch post data for a given slug
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postData = await getPostData(params?.slug as string);
-  return {
-    props: {
-      postData, 
-    },
-  };
+  return { props: { postData } };
 };

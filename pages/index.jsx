@@ -70,7 +70,7 @@ export default function HomePage() {
               ],
               priceRange: "$8 - $12",
               description:
-                "Jabbout Tutoring is a private tutoring service that offers private lessons in Math, English and Science for all Lebanese Students. We offer in person tutoring at Hammana and Dbayeh. For students outside of these areas, we offer online tutoring.",
+                "Jabbout Tutoring is a private tutoring service that offers private lessons in Math, English, and Science for all Lebanese Students. We offer in-person tutoring at Hammana and Dbayeh. For students outside of these areas, we offer online tutoring.",
               areaServed: [
                 {
                   "@type": "Place",

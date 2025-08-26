@@ -1,76 +1,84 @@
 import Head from "next/head";
 import Link from "next/link";
-import { getAllPosts } from "../../lib/posts";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { getAllPosts } from "../../lib/posts";
 
-type Post = {
-  slug: string;
-  title: string;
-  date: string;
-  coverImage?: string;
-  excerpt?: string;
-};
+export default function Blog({ allPosts }: { allPosts: any[] }) {
+  const siteUrl = "https://www.jabbourtutoring.com";
 
-type BlogProps = {
-  allPostsData: Post[];
-};
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Jabbour Tutoring Blog",
+    description:
+      "Educational tips, tutoring strategies, and academic success guides from Jabbour Tutoring in Hammana and Dbayeh.",
+    itemListElement: allPosts.map((post, index) => ({
+      "@type": "BlogPosting",
+      position: index + 1,
+      headline: post.title,
+      url: `${siteUrl}/blog/${post.slug}`,
+      datePublished: post.date,
+      image: post.coverImage
+        ? `${siteUrl}${post.coverImage}`
+        : `${siteUrl}/logo.png`,
+      author: {
+        "@type": "Organization",
+        name: "Jabbour Tutoring",
+      },
+    })),
+  };
 
-export default function Blog({ allPostsData }: BlogProps) {
   return (
     <>
       <Head>
         <title>Our Blog | Jabbour Tutoring</title>
         <meta
           name="description"
-          content="Education tips, study strategies, and subject roadmaps from Jabbour Tutoring. Resources for students in Hammana, Dbayeh, and across Lebanon."
-        />
-        <meta property="og:title" content="Our Blog | Jabbour Tutoring" />
-        <meta
-          property="og:description"
-          content="Study tips & resources from Jabbour Tutoring for students in Hammana, Dbayeh & all over Lebanon."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jabbourtutoring.com/blog" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Blog | Jabbour Tutoring" />
-        <meta
-          name="twitter:description"
-          content="Expert tutoring tips, study guides, and educational insights from Jabbour Tutoring."
+          content="Read our latest articles on private tutoring, study strategies, and academic success tips in Lebanon."
         />
       </Head>
 
       <Navbar />
 
-      <main className="max-w-6xl mx-auto px-4 py-10">
-        <h1 className="text-4xl font-bold mb-10">Our Blog</h1>
+      <main className="max-w-6xl mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold mb-12 text-center">Our Blog</h1>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {allPostsData.map(({ slug, date, title, coverImage, excerpt }) => (
-            <Link
-              key={slug}
-              href={`/blog/${slug}`}
-              className="group block bg-white rounded-lg shadow-md hover:shadow-lg overflow-hidden transition-shadow duration-300"
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {allPosts.map((post) => (
+            <div
+              key={post.slug}
+              className="border rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col"
             >
-              {coverImage && (
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={coverImage}
-                    alt={title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+              {post.coverImage && (
+                <img
+                  src={post.coverImage}
+                  alt={post.title}
+                  className="h-48 w-full object-cover"
+                />
               )}
-              <div className="p-5">
-                <p className="text-sm text-gray-500 mb-2">
-                  {new Date(date).toLocaleDateString()}
+              <div className="p-6 flex flex-col flex-grow">
+                <h2 className="text-2xl font-semibold mb-2">
+                  <Link href={`/blog/${post.slug}`} className="hover:underline">
+                    {post.title}
+                  </Link>
+                </h2>
+                <p className="text-gray-500 text-sm mb-3">
+                  {new Date(post.date).toLocaleDateString()}
                 </p>
-                <h2 className="text-lg font-semibold mb-3">{title}</h2>
-                <p className="text-gray-600 text-sm">
-                  {excerpt || "Click to read more..."}
+                <p className="text-gray-700 flex-grow">
+                  {post.description
+                    ? post.description.slice(0, 120) + "..."
+                    : "Read more about this topic."}
                 </p>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-4 text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Read More →
+                </Link>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </main>
@@ -81,6 +89,6 @@ export default function Blog({ allPostsData }: BlogProps) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getAllPosts();
-  return { props: { allPostsData } };
+  const allPosts = getAllPosts();
+  return { props: { allPosts } };
 }
