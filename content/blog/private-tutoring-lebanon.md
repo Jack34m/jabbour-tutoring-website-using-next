@@ -88,6 +88,13 @@ At Jabbour Tutoring, we understand the needs and goals of Lebanese students. Wit
 - ✅ Flexible scheduling
 - ✅ [Patient and experienced tutors](/about)
 
+<iframe width="560" height="315" 
+  src="https://youtu.be/76LhCBCPKRI?si=gAGihJkA9bJkNBWt" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
 ## The Bottom Line
 
 Private tutoring in Lebanon is more than additional help; it’s an investment in your child’s future, well-being, and outlook on education.
