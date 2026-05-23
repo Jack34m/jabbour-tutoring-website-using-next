@@ -5,8 +5,6 @@ coverImage: "/logo.png"
 excerpt: "Why tutoring is essential in Lebanon today — challenges, benefits, and how Jabbour Tutoring helps students succeed."
 ---
 
-import YouTubeEmbed from "@/components/YouTubeEmbed";
-
 # The Trend of Private Tutoring in Lebanon.
 
 If there’s one thing Lebanese people are most famous for, it’s their emphasis on education. This mindset has long been a key factor in the success of the Lebanese diaspora worldwide. However, in recent years, students and parents have faced increasing challenges.
@@ -90,7 +88,9 @@ At Jabbour Tutoring, we understand the needs and goals of Lebanese students. Wit
 - ✅ Flexible scheduling
 - ✅ [Patient and experienced tutors](/about)
 
-<YouTubeEmbed videoId="76LhCBCPKRI" />
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/76LhCBCPKRI?si=CJ2Fb9ma_cOixJ8-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## The Bottom Line
 
