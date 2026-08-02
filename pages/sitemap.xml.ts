@@ -16,6 +16,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const staticPages = [
     { url: "", changefreq: "monthly", priority: 1.0 },
     { url: "about", changefreq: "monthly", priority: 0.8 },
+    { url: "services", changefreq: "monthly", priority: 0.8 },
+    { url: "subjects", changefreq: "monthly", priority: 0.8 },
     { url: "contact", changefreq: "monthly", priority: 0.8 },
     { url: "blog", changefreq: "weekly", priority: 0.8 },
     {
@@ -25,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       lastmod: today,
     },
     {
-      url: "tutoring-in-zouk-mosbeh",
+      url: "tutoring-in-Dbayeh",
       changefreq: "weekly",
       priority: 0.9,
       lastmod: today,

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 
 export default function TutoringInDbayeh() {
   const phone = "+96170278248";
@@ -38,8 +39,11 @@ export default function TutoringInDbayeh() {
               },
               telephone: ["+961 71 855 369", "+961 70 278 248"],
               sameAs: [
-                "https://www.instagram.com/yourhandle",
-                "https://www.facebook.com/yourhandle",
+                "https://www.instagram.com/jabbour_tutoring_lb/",
+                "https://www.facebook.com/profile.php?id=61592028136397",
+                "https://www.youtube.com/@JabbourTutoring",
+                "https://x.com/Jabbourtutoring",
+                "https://www.linkedin.com/company/108147552/",
               ],
               serviceType: [
                 "Math Tutoring",
@@ -53,48 +57,39 @@ export default function TutoringInDbayeh() {
 
       <Navbar />
 
-      <main className="mx-auto px-6 py-12 w-full bg-gradient-to-b from-green-100 to-white ">
-        <section className="text-center ">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+      <main className="mx-auto px-6 py-16 w-full bg-ivory text-ink">
+        <section className="text-center max-w-3xl mx-auto">
+          <p className="uppercase tracking-[0.2em] text-xs sm:text-sm text-gold-600 font-semibold mb-4">
+            Dbayeh, Metn
+          </p>
+          <div className="mx-auto mb-6 h-px w-16 bg-gold-500" />
+          <h1 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-brand-800">
             Private Tutoring in Dbayeh, Metn
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-700">
-            Get effective one-on-one support in <Link href="/services" className="text-green-600 underline hover:text-yellow-300"><strong>Math</strong>,{" "}
+          <p className="mt-6 text-lg md:text-xl text-ink/70">
+            Get effective one-on-one support in <Link href="/services" className="text-brand-700 underline decoration-gold-500 hover:text-gold-600"><strong>Math</strong>,{" "}
             <strong>English</strong>, and <strong>Science</strong></Link> with flexible
             in-person sessions in Dbayeh or online lessons anywhere in Lebanon.
             Learn at your time, on your pace.
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={`tel:${phone}`}
-              className="px-6 py-3 rounded-xl shadow-sm border text-base font-semibold hover:opacity-90"
-            >
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href={`tel:${phone}`} variant="secondary">
               Call {phone.replace("+961", "+961 ")}
-            </a>
-            <a
-              href={whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl shadow-sm border text-base font-semibold hover:opacity-90"
-            >
+            </Button>
+            <Button href={whatsapp} target="_blank" rel="noopener noreferrer" variant="secondary">
               Chat on WhatsApp
-            </a>
-            <Link
-              href="/contact"
-              className="px-6 py-3 rounded-xl shadow-sm border text-base font-semibold hover:opacity-90"
-            >
-              Book a Free Consultation
-            </Link>
+            </Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </section>
 
-        <section className="mt-12 grid md:grid-cols-2 gap-8 items-start">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">
+        <section className="mt-16 max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+          <div className="space-y-5">
+            <h2 className="text-2xl font-serif font-semibold text-brand-800">
               Why choose Jabbour Tutoring?
             </h2>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+            <ul className="list-disc pl-5 space-y-2 text-ink/70">
               <li>Personalized plans for school curriculum & exams.</li>
               <li>Clear progress tracking and parent updates.</li>
               <li>Practice tests and homework available upon request.</li>
@@ -102,20 +97,20 @@ export default function TutoringInDbayeh() {
               <li>Customer loyalty programs</li>
               <li>Option to switch between in-person and online anytime.</li>
             </ul>
-            <p className="text-gray-700">
+            <p className="text-ink/70">
               Want subject details? See our{" "}
-              <Link href="/services" className="text-green-600 underline hover:text-yellow-300">
+              <Link href="/services" className="text-brand-700 underline decoration-gold-500 hover:text-gold-600">
                 services
               </Link>{" "}
               or{" "}
-              <Link href="/blog" className="text-green-600 underline hover:text-yellow-300">
+              <Link href="/blog" className="text-brand-700 underline decoration-gold-500 hover:text-gold-600">
                 blog
               </Link>{" "}
               for study tips and guides.
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow">
+          <div className="rounded-xl overflow-hidden border border-brand-900/10">
             {/* Placeholder Google Map embed for Dbayeh (Dbaye) */}
             <iframe
               title="Dbayeh Map"

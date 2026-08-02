@@ -81,11 +81,11 @@ export default function Post({ postData }: PostProps) {
 
       <Navbar />
 
-      <main className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <main className="max-w-6xl mx-auto px-4 py-12 bg-ivory grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Article column */}
         <div className="lg:col-span-3">
-          <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
-          <p className="text-gray-500 mb-8">
+          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-brand-800 mb-4">{postData.title}</h1>
+          <p className="text-ink/40 mb-8">
             {new Date(postData.date).toLocaleDateString()}
           </p>
 
@@ -93,7 +93,7 @@ export default function Post({ postData }: PostProps) {
             <img
               src={postData.coverImage}
               alt={postData.title}
-              className="w-full h-auto rounded-lg shadow mb-8"
+              className="w-full h-auto rounded-xl border border-brand-900/10 mb-8"
             />
           )}
 

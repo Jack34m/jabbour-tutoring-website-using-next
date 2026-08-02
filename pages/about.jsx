@@ -22,24 +22,28 @@ export default function AboutPage() {
 
       <Navbar />
 
-      <main className="min-h-screen bg-gradient-to-b from-green-100 to-white text-gray-800 font-[Inter]">
-        <section className="py-16 px-4 sm:px-6 max-w-5xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl font-[Playfair Display] font-bold text-green-800 mb-6">
+      <main className="min-h-screen bg-ivory text-ink font-sans">
+        <section className="py-20 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+          <p className="uppercase tracking-[0.2em] text-xs sm:text-sm text-gold-600 font-semibold mb-4">
+            About Us
+          </p>
+          <div className="mx-auto mb-6 h-px w-16 bg-gold-500" />
+          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-brand-800 mb-6">
             Meet the Tutors
           </h1>
-          <h3 className="text-base sm:text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+          <h3 className="text-base sm:text-lg text-ink/70 mb-14 max-w-3xl mx-auto">
             Jabbour Tutoring is a newly established tutoring service with
             locations in both Hammana and Dbayeh. Our{" "}
             <Link
               href="/services"
-              className="text-green-600 underline hover:text-yellow-300"
+              className="text-brand-700 underline decoration-gold-500 hover:text-gold-600"
             >
               services
             </Link>{" "}
             include{" "}
             <Link
               href="/subjects"
-              className="text-green-600 underline hover:text-yellow-300"
+              className="text-brand-700 underline decoration-gold-500 hover:text-gold-600"
             >
               English, Math, and Science{" "}
             </Link>{" "}
@@ -50,8 +54,8 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             {/* James Card */}
-            <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center">
-              <div className="w-40 h-40 mb-4 rounded-full overflow-hidden">
+            <div className="bg-white border border-brand-900/10 rounded-xl p-8 flex flex-col items-center text-center">
+              <div className="w-40 h-40 mb-5 rounded-full overflow-hidden ring-2 ring-gold-500/40">
                 <Image
                   src="/james.jpg"
                   alt="James Jabbour tutor"
@@ -60,10 +64,10 @@ export default function AboutPage() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h2 className="text-lg font-semibold text-green-800">
+              <h2 className="text-lg font-serif font-semibold text-brand-800">
                 James Jabbour
               </h2>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-ink/60 mt-3 leading-relaxed">
                 James is a private Mathematics and Physics tutor with over 3
                 years of tutoring experience. In his spare time, James enjoys
                 studying, reading and working out.
@@ -71,8 +75,8 @@ export default function AboutPage() {
             </div>
 
             {/* Nicole Card */}
-            <div className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center">
-              <div className="w-40 h-40 mb-4 rounded-full overflow-hidden">
+            <div className="bg-white border border-brand-900/10 rounded-xl p-8 flex flex-col items-center text-center">
+              <div className="w-40 h-40 mb-5 rounded-full overflow-hidden ring-2 ring-gold-500/40">
                 <Image
                   src="/nicole.jpg"
                   alt="Nicole Jabbour tutor"
@@ -81,10 +85,10 @@ export default function AboutPage() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h2 className="text-lg font-semibold text-green-800">
+              <h2 className="text-lg font-serif font-semibold text-brand-800">
                 Nicole Jabbour
               </h2>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-ink/60 mt-3 leading-relaxed">
                 Nicole is a private English and Mathematics tutor. As a proud
                 graduate from AUST, Nicole holds 2 degrees in teaching, with
                 over 7 years of tutoring experience. In her spare time, she

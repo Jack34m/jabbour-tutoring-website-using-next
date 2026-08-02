@@ -1,42 +1,44 @@
 // File: components/Footer.tsx
 import Link from "next/link";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   return (
-    <footer className="bg-white shadow-inner mt-10 py-10 text-sm text-gray-600">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    <footer className="bg-brand-900 text-ivory/80 mt-10 border-t border-gold-500/40">
+      <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
         {/* Column 1: Branding */}
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">
+          <h3 className="text-lg font-serif font-semibold text-ivory mb-2">
             Jabbour Tutoring
           </h3>
-          <p className="text-gray-500">
+          <p className="text-ivory/60 text-sm leading-relaxed">
             Helping students excel with personalized in-person and online
             tutoring across Lebanon.
           </p>
-          <p className="mt-3 text-gray-400">
+          <SocialLinks className="flex justify-center md:justify-start space-x-4 mt-4 text-ivory/60" iconClassName="w-4 h-4" />
+          <p className="mt-4 text-ivory/40 text-xs">
             © {new Date().getFullYear()} Jabbour Tutoring. All rights reserved.
           </p>
         </div>
 
         {/* Column 2: Quick Links */}
         <div>
-          <h4 className="text-base font-semibold text-gray-800 mb-2">
+          <h4 className="text-sm font-semibold tracking-wide uppercase text-gold-400 mb-3">
             Quick Links
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/about" className="hover:text-blue-600">
+              <Link href="/about" className="hover:text-gold-400 transition-colors">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-blue-600">
+              <Link href="/contact" className="hover:text-gold-400 transition-colors">
                 Contact
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-blue-600">
+              <Link href="/blog" className="hover:text-gold-400 transition-colors">
                 Blog
               </Link>
             </li>
@@ -45,29 +47,29 @@ export default function Footer() {
 
         {/* Column 3: Tutoring Locations with SEO text */}
         <div>
-          <h4 className="text-base font-semibold text-gray-800 mb-2">
+          <h4 className="text-sm font-semibold tracking-wide uppercase text-gold-400 mb-3">
             Tutoring Locations
           </h4>
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-sm">
             <li>
               <Link
                 href="/tutoring-in-hammana"
-                className="hover:text-blue-600 font-medium"
+                className="hover:text-gold-400 transition-colors font-medium"
               >
                 Hammana (Baabda District)
               </Link>
-              <p className="text-gray-500 text-xs mt-1">
+              <p className="text-ivory/50 text-xs mt-1">
                 Local tutoring in Hammana with flexible timing and schedules.
               </p>
             </li>
             <li>
               <Link
                 href="/tutoring-in-Dbayeh"
-                className="hover:text-blue-600 font-medium"
+                className="hover:text-gold-400 transition-colors font-medium"
               >
                 Dbayeh (Metn District)
               </Link>
-              <p className="text-gray-500 text-xs mt-1">
+              <p className="text-ivory/50 text-xs mt-1">
                 Personalized tutoring in Dbayeh for all lebanese students.
               </p>
             </li>

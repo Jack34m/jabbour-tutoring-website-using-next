@@ -41,14 +41,22 @@ export default function Blog({ allPosts }: { allPosts: any[] }) {
 
       <Navbar />
 
-      <main className="max-w-6xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-12 text-center">Our Blog</h1>
+      <main className="max-w-6xl mx-auto px-4 py-16 bg-ivory">
+        <div className="text-center mb-14">
+          <p className="uppercase tracking-[0.2em] text-xs sm:text-sm text-gold-600 font-semibold mb-4">
+            Insights
+          </p>
+          <div className="mx-auto mb-6 h-px w-16 bg-gold-500" />
+          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-brand-800">
+            Our Blog
+          </h1>
+        </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {allPosts.map((post) => (
             <div
               key={post.slug}
-              className="border rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col"
+              className="bg-white border border-brand-900/10 rounded-xl hover:border-gold-500/50 transition-colors duration-300 overflow-hidden flex flex-col"
             >
               {post.coverImage && (
                 <img
@@ -58,22 +66,22 @@ export default function Blog({ allPosts }: { allPosts: any[] }) {
                 />
               )}
               <div className="p-6 flex flex-col flex-grow">
-                <h2 className="text-2xl font-semibold mb-2">
-                  <Link href={`/blog/${post.slug}`} className="hover:underline">
+                <h2 className="text-xl font-serif font-semibold mb-2 text-brand-800">
+                  <Link href={`/blog/${post.slug}`} className="hover:text-gold-600">
                     {post.title}
                   </Link>
                 </h2>
-                <p className="text-gray-500 text-sm mb-3">
+                <p className="text-ink/40 text-sm mb-3">
                   {new Date(post.date).toLocaleDateString()}
                 </p>
-                <p className="text-gray-700 flex-grow">
+                <p className="text-ink/60 flex-grow text-sm leading-relaxed">
                   {post.description
                     ? post.description.slice(0, 120) + "..."
                     : "Read more about this topic."}
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="mt-4 text-blue-600 hover:text-blue-800 font-medium"
+                  className="mt-4 text-brand-700 hover:text-gold-600 font-medium text-sm"
                 >
                   Read More →
                 </Link>

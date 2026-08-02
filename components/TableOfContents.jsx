@@ -34,14 +34,14 @@ export default function TableOfContents() {
   }, []);
 
   return (
-    <aside className="sticky top-20 max-h-[80vh] overflow-y-auto p-4 rounded-2xl border shadow-sm bg-white/60 backdrop-blur-sm">
-      <h2 className="font-bold text-lg mb-3">Table of Contents</h2>
+    <aside className="sticky top-24 max-h-[80vh] overflow-y-auto p-5 rounded-xl border border-brand-900/10 bg-white">
+      <h2 className="font-serif font-semibold text-lg mb-3 text-brand-800">Table of Contents</h2>
       <ul className="space-y-2">
         {headings.map((h) => (
           <li key={h.id} className={h.level === "H3" ? "ml-4 text-sm" : ""}>
             <a
               href={`#${h.id}`}
-              className="text-blue-600 hover:text-yellow-500 transition-colors"
+              className="text-brand-700 hover:text-gold-600 transition-colors"
             >
               {h.text}
             </a>

@@ -3,6 +3,21 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import { useEffect } from "react";
+import { Playfair_Display, Inter } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -31,7 +46,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         `}
       </Script>
 
-      <Component {...pageProps} />
+      <div className={`${playfairDisplay.variable} ${inter.variable} font-sans`}>
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }
