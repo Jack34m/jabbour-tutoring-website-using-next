@@ -7,14 +7,44 @@ export default function ServicesPage() {
   return (
     <>
       <Head>
-        <title>Jabbour Tutoring: English, Mathematics and Science lessons</title>
+        <title>Jabbour Tutoring: English, Math, Physics and Chemistry.</title>
         <meta
           name="description"
           content="Discover our personalized private tutoring services covering English, Math and Science. Available online or in-person for all Lebanese students."
         />
+        <link
+          rel="canonical"
+          href="https://www.jabbourtutoring.com/services"
+        />
+        <meta
+          property="og:title"
+          content="Jabbour Tutoring: English, Math, Physics and Chemistry."
+        />
         <meta
         property="og:description"
         content="Private Math, English & Science tutoring in Hammana & Dbayeh. Flexible in-person or online sessions to fit your schedule."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.jabbourtutoring.com/services"
+        />
+        <meta
+          property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Jabbour Tutoring: English, Math, Physics and Chemistry."
+        />
+        <meta
+          name="twitter:description"
+          content="Private Math, English & Science tutoring in Hammana & Dbayeh. Flexible in-person or online sessions to fit your schedule."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.jabbourtutoring.com/logo.png"
         />
       </Head>
       <Navbar />

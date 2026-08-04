@@ -3,13 +3,15 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState } from "react";
 
-export default function ContactPage() {
+export default function CareersPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "",
-    message: "",
+    languages: "",
+    skills: "",
+    experience: "",
+    coverLetter: "",
   });
 
   const [status, setStatus] = useState("");
@@ -23,7 +25,7 @@ export default function ContactPage() {
     setStatus("Sending...");
 
     try {
-      const res = await fetch("/api/send-email", {
+      const res = await fetch("/api/send-career-application", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -32,43 +34,49 @@ export default function ContactPage() {
       const data = await res.json();
 
       if (res.ok) {
-        setStatus("Message sent successfully!");
-        setForm({ name: "", email: "", subject: "", message: "" });
+        setStatus("Application sent successfully! We'll be in touch.");
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          languages: "",
+          skills: "",
+          experience: "",
+          coverLetter: "",
+        });
       } else {
         setStatus(data.error || "Something went wrong.");
       }
     } catch (err) {
-      console.error("Email error:", err);
-      setStatus("Failed to send message.");
+      console.error("Career application error:", err);
+      setStatus("Failed to send application.");
     }
   };
 
   return (
     <>
       <Head>
-        <title>
-          Contact us at Jabbour Tutoring, based in Hammana and Dbayeh
-        </title>
+        <title>Careers at Jabbour Tutoring, Join Our Team</title>
         <meta
           name="description"
-          content="Feel free to reach out to us by what's up or email. Get your free consultation today for any private lessons in mathematics, science, and english. "
+          content="Looking to join Jabbour Tutoring? Apply to become a private tutor in Hammana or Dbayeh, Lebanon. Submit your experience, languages, and cover letter."
         />
         <link
           rel="canonical"
-          href="https://www.jabbourtutoring.com/contact"
+          href="https://www.jabbourtutoring.com/careers"
         />
         <meta
           property="og:title"
-          content="Contact us at Jabbour Tutoring, based in Hammana and Dbayeh"
+          content="Careers at Jabbour Tutoring, Join Our Team"
         />
         <meta
-        property="og:description"
-        content="Get in touch for private Math, English & Science lessons in Hammana & Dbayeh. In-person & online tutoring available."
+          property="og:description"
+          content="Apply to join the Jabbour Tutoring team as a private tutor in Hammana or Dbayeh, Lebanon."
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://www.jabbourtutoring.com/contact"
+          content="https://www.jabbourtutoring.com/careers"
         />
         <meta
           property="og:image"
@@ -77,11 +85,11 @@ export default function ContactPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Contact us at Jabbour Tutoring, based in Hammana and Dbayeh"
+          content="Careers at Jabbour Tutoring, Join Our Team"
         />
         <meta
           name="twitter:description"
-          content="Get in touch for private Math, English & Science lessons in Hammana & Dbayeh. In-person & online tutoring available."
+          content="Apply to join the Jabbour Tutoring team as a private tutor in Hammana or Dbayeh, Lebanon."
         />
         <meta
           name="twitter:image"
@@ -92,38 +100,16 @@ export default function ContactPage() {
       <main className="min-h-screen bg-ivory text-ink font-sans">
         <section className="py-20 px-4 md:px-6 max-w-3xl mx-auto text-center">
           <p className="uppercase tracking-[0.2em] text-xs sm:text-sm text-gold-600 font-semibold mb-4">
-            Contact
+            Careers
           </p>
           <div className="mx-auto mb-6 h-px w-16 bg-gold-500" />
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-brand-800 mb-4">
-            Feel free to Contact Us by WhatsApp or Email
+            Join Our Team
           </h1>
-          <p className="text-base md:text-lg text-ink/70 mb-6">
-            📞 WhatsApp:{" "}
-            <a
-              href="https://wa.me/96171855369"
-              target="_blank"
-              className="text-brand-700 font-semibold hover:text-gold-600"
-            >
-              +961 71 855 369
-            </a>
-            <br></br>
-            <a
-              href="https://wa.me/96171855369"
-              target="_blank"
-              className="text-brand-700 font-semibold hover:text-gold-600"
-            >
-              +961 70 278 248
-            </a>
-          </p>
-          <p className="text-base md:text-lg text-ink/70 mb-12">
-            📧 Email:{" "}
-            <a
-              href="mailto:JamesJabbour88@gmail.com"
-              className="text-brand-700 font-semibold hover:text-gold-600"
-            >
-              jabbourtutoring@gmail.com
-            </a>
+          <p className="text-base md:text-lg text-ink/70 mb-12 max-w-2xl mx-auto">
+            We're always glad to hear from passionate tutors. Fill out the
+            form below to apply — no attachments needed, just tell us about
+            yourself.
           </p>
 
           <form
@@ -186,47 +172,80 @@ export default function ContactPage() {
             </div>
             <div>
               <label
-                htmlFor="subject"
+                htmlFor="languages"
                 className="block text-sm font-medium text-ink/80 mb-1"
               >
-                Subject
+                Languages You Speak
               </label>
-              <select
-                id="subject"
-                name="subject"
-                value={form.subject}
+              <input
+                type="text"
+                id="languages"
+                name="languages"
+                value={form.languages}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-brand-900/15 rounded-md focus:ring-2 focus:ring-gold-500/40 focus:border-brand-700 focus:outline-none"
+                placeholder="e.g. Arabic, English, French"
                 required
-              >
-                <option value="">Select a Subject</option>
-                <option value="math">Mathematics</option>
-                <option value="english">English</option>
-                <option value="physics">Physics</option>
-              </select>
+              />
             </div>
             <div>
               <label
-                htmlFor="message"
+                htmlFor="skills"
                 className="block text-sm font-medium text-ink/80 mb-1"
               >
-                Message
+                Skills
               </label>
               <textarea
-                id="message"
-                name="message"
-                value={form.message}
+                id="skills"
+                name="skills"
+                value={form.skills}
+                onChange={handleChange}
+                rows={3}
+                className="w-full px-4 py-2 border border-brand-900/15 rounded-md focus:ring-2 focus:ring-gold-500/40 focus:border-brand-700 focus:outline-none"
+                placeholder="e.g. Subjects you can teach, curriculum planning, communication, patience with young learners"
+                required
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="experience"
+                className="block text-sm font-medium text-ink/80 mb-1"
+              >
+                Tutoring Experience (if any)
+              </label>
+              <textarea
+                id="experience"
+                name="experience"
+                value={form.experience}
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-2 border border-brand-900/15 rounded-md focus:ring-2 focus:ring-gold-500/40 focus:border-brand-700 focus:outline-none"
-                placeholder="Write your message here..."
+                placeholder="Tell us about any previous tutoring or teaching experience"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="coverLetter"
+                className="block text-sm font-medium text-ink/80 mb-1"
+              >
+                Cover Letter
+              </label>
+              <textarea
+                id="coverLetter"
+                name="coverLetter"
+                value={form.coverLetter}
+                onChange={handleChange}
+                rows={6}
+                className="w-full px-4 py-2 border border-brand-900/15 rounded-md focus:ring-2 focus:ring-gold-500/40 focus:border-brand-700 focus:outline-none"
+                placeholder="Tell us why you'd like to join Jabbour Tutoring"
+                required
               />
             </div>
             <button
               type="submit"
               className="w-full bg-brand-700 text-ivory py-3 rounded-full font-medium hover:bg-brand-800 transition-colors duration-300"
             >
-              Send Message
+              Submit Application
             </button>
             {status && (
               <p className="text-center text-sm text-ink/60 mt-2">{status}</p>

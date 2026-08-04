@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { getAllPosts } from "../../lib/posts";
@@ -37,6 +38,31 @@ export default function Blog({ allPosts }: { allPosts: any[] }) {
           name="description"
           content="Read our latest articles on private tutoring, study strategies, and academic success tips in Lebanon."
         />
+        <link rel="canonical" href="https://www.jabbourtutoring.com/blog" />
+        <meta property="og:title" content="Our Blog | Jabbour Tutoring" />
+        <meta
+          property="og:description"
+          content="Read our latest articles on private tutoring, study strategies, and academic success tips in Lebanon."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.jabbourtutoring.com/blog"
+        />
+        <meta
+          property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Blog | Jabbour Tutoring" />
+        <meta
+          name="twitter:description"
+          content="Read our latest articles on private tutoring, study strategies, and academic success tips in Lebanon."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
       </Head>
 
       <Navbar />
@@ -59,11 +85,14 @@ export default function Blog({ allPosts }: { allPosts: any[] }) {
               className="bg-white border border-brand-900/10 rounded-xl hover:border-gold-500/50 transition-colors duration-300 overflow-hidden flex flex-col"
             >
               {post.coverImage && (
-                <img
-                  src={post.coverImage}
-                  alt={post.title}
-                  className="h-48 w-full object-cover"
-                />
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               )}
               <div className="p-6 flex flex-col flex-grow">
                 <h2 className="text-xl font-serif font-semibold mb-2 text-brand-800">

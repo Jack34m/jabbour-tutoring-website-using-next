@@ -17,6 +17,40 @@ export default function TutoringInHammana() {
           name="description"
           content="One-on-one private tutoring in Hammana for Math, English, and Science. Flexible scheduling, in-person or online. Book a free consultation today."
         />
+        <link
+          rel="canonical"
+          href="https://www.jabbourtutoring.com/tutoring-in-hammana"
+        />
+        <meta
+          property="og:title"
+          content="Private Tutoring in Hammana for Math, English & Science"
+        />
+        <meta
+          property="og:description"
+          content="One-on-one private tutoring in Hammana for Math, English, and Science. Flexible scheduling, in-person or online. Book a free consultation today."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.jabbourtutoring.com/tutoring-in-hammana"
+        />
+        <meta
+          property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Private Tutoring in Hammana for Math, English & Science"
+        />
+        <meta
+          name="twitter:description"
+          content="One-on-one private tutoring in Hammana for Math, English, and Science. Flexible scheduling, in-person or online. Book a free consultation today."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
         {/* LocalBusiness schema for this location */}
         <script
           type="application/ld+json"

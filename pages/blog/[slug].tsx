@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Navbar from "../../components/Navbar";
@@ -36,6 +37,7 @@ export default function Post({ postData }: PostProps) {
         {postData.keywords && postData.keywords.length > 0 && (
           <meta name="keywords" content={postData.keywords.join(", ")} />
         )}
+        <link rel="canonical" href={url} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
@@ -90,11 +92,14 @@ export default function Post({ postData }: PostProps) {
           </p>
 
           {postData.coverImage && (
-            <img
-              src={postData.coverImage}
-              alt={postData.title}
-              className="w-full h-auto rounded-xl border border-brand-900/10 mb-8"
-            />
+            <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-brand-900/10 mb-8">
+              <Image
+                src={postData.coverImage}
+                alt={postData.title}
+                fill
+                className="object-cover"
+              />
+            </div>
           )}
 
           <article

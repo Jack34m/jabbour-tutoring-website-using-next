@@ -20,6 +20,10 @@ When families in Zouk Mosbeh and Zouk Mikael begin searching for academic suppor
 
 At Jabbour Tutoring, we exclusively offer one-on-one instruction. This isn't a business decision made lightly but rather a pedagogical commitment based on years of experience working with students throughout the Kesrouan region. Understanding why individual tutoring proves more effective requires examining both approaches honestly.
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-_ESBjyYo6o?si=NtyZw8z3M_NDm5Ly" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ## Understanding Group Tutoring
 
 Group tutoring typically involves one instructor working with three to eight students simultaneously. These sessions often focus on general exam preparation or reviewing common curriculum topics that multiple students are studying concurrently.

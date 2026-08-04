@@ -6,10 +6,44 @@ export default function SubjectsPage() {
   return (
     <>
       <Head>
-        <title>SAT, Lebanese Baccalaureate &amp; Brevet Tutoring Programs</title>
+        <title>SAT, IB, AP, GCSE, Brevet &amp; Baccalaureate Tutoring</title>
         <meta
           name="description"
-          content="Jabbour Tutoring prepares students for the SAT, Lebanese Baccalaureate, and Brevet exams, and covers all school subjects in person or online."
+          content="Jabbour Tutoring prepares students for the SAT, Brevet, Lebanese Baccalaureate, GCSE, IB, and AP exams, and covers all school subjects in person or online."
+        />
+        <link
+          rel="canonical"
+          href="https://www.jabbourtutoring.com/subjects"
+        />
+        <meta
+          property="og:title"
+          content="SAT, IB, AP, GCSE, Brevet & Baccalaureate Tutoring"
+        />
+        <meta
+          property="og:description"
+          content="Jabbour Tutoring prepares students for the SAT, Brevet, Lebanese Baccalaureate, GCSE, IB, and AP exams, and covers all school subjects in person or online."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.jabbourtutoring.com/subjects"
+        />
+        <meta
+          property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="SAT, IB, AP, GCSE, Brevet & Baccalaureate Tutoring"
+        />
+        <meta
+          name="twitter:description"
+          content="Jabbour Tutoring prepares students for the SAT, Brevet, Lebanese Baccalaureate, GCSE, IB, and AP exams, and covers all school subjects in person or online."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.jabbourtutoring.com/logo.png"
         />
       </Head>
       <Navbar />
@@ -36,7 +70,16 @@ export default function SubjectsPage() {
               <p className="text-sm text-ink/60 leading-relaxed">
                 Focused SAT preparation covering Math, Reading, and Writing,
                 with practice tests and strategies tailored to each student's
-                target score.
+                target score. Our students regularly score 1400+.
+              </p>
+            </div>
+            <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
+              <h2 className="text-xl font-serif font-semibold text-brand-800 mb-3">
+                Brevet
+              </h2>
+              <p className="text-sm text-ink/60 leading-relaxed">
+                Comprehensive Brevet exam preparation to help middle school
+                students build strong fundamentals and exam confidence. Our students regularly see scores of 16+/20
               </p>
             </div>
             <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
@@ -46,16 +89,34 @@ export default function SubjectsPage() {
               <p className="text-sm text-ink/60 leading-relaxed">
                 Structured preparation for the official Lebanese Baccalaureate
                 exams, aligned with the Lebanese curriculum across all
-                sections.
+                sections. Our students regularly score 15+/20 on the official exams.
               </p>
             </div>
             <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
               <h2 className="text-xl font-serif font-semibold text-brand-800 mb-3">
-                Brevet
+                GCSE
               </h2>
               <p className="text-sm text-ink/60 leading-relaxed">
-                Comprehensive Brevet exam preparation to help middle school
-                students build strong fundamentals and exam confidence.
+                Support across GCSE coursework and exams, building strong
+                foundations for further study in core and elective subjects.
+              </p>
+            </div>
+            <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
+              <h2 className="text-xl font-serif font-semibold text-brand-800 mb-3">
+                International Baccalaureate (IB)
+              </h2>
+              <p className="text-sm text-ink/60 leading-relaxed">
+                Guidance through the IB Diploma Programme, from coursework and
+                internal assessments to final exam preparation.
+              </p>
+            </div>
+            <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
+              <h2 className="text-xl font-serif font-semibold text-brand-800 mb-3">
+                Advanced Placement (AP)
+              </h2>
+              <p className="text-sm text-ink/60 leading-relaxed">
+                AP exam preparation across a range of subjects, helping
+                students earn college credit and stand out in applications. Our students regularly excel at AP Chemistry and AP Mathematics.
               </p>
             </div>
           </div>
@@ -69,9 +130,9 @@ export default function SubjectsPage() {
             </h2>
             <p className="text-base text-ink/70 mb-12 max-w-3xl mx-auto">
               Every program is built on a strong foundation. We offer expert
-              guidance in Math, English, and Physics for every grade level.
+              guidance in Math, English, Physics, and Chemistry for every grade level.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
                 <h3 className="text-lg font-serif font-semibold text-brand-800 mb-3">
                   Mathematics
@@ -79,8 +140,7 @@ export default function SubjectsPage() {
                 <p className="text-sm text-ink/60 leading-relaxed">
                   We cover all elementary, middle school and high-school
                   mathematics. The most popular areas of math tutoring among
-                  our clients are algebra, geometry, trigonometry, and
-                  calculus.
+                  our clients is calculus.
                 </p>
               </div>
               <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
@@ -88,8 +148,8 @@ export default function SubjectsPage() {
                   English
                 </h3>
                 <p className="text-sm text-ink/60 leading-relaxed">
-                  We offer a wide-range of English services for non-native
-                  English speakers and beginners. Our program focusses
+                  We offer a wide-range of English services for 
+                  English speakers at all levels. Our program focusses
                   primarily on reading, writing, grammar, pronunciation and
                   literature.
                 </p>
@@ -100,9 +160,18 @@ export default function SubjectsPage() {
                 </h3>
                 <p className="text-sm text-ink/60 leading-relaxed">
                   We offer Physics for all middle school and high school
-                  students. Our Physics program follows that of the Lebanese
+                  students as well as University students in select courses. Our Physics program follows that of the Lebanese
                   curriculum, and the most popular service among our clients
                   is the Physics official exam preparation roadmap.
+                </p>
+              </div>
+              <div className="bg-white border border-brand-900/10 rounded-xl p-8 text-left hover:border-gold-500/50 transition-colors duration-300">
+                <h3 className="text-lg font-serif font-semibold text-brand-800 mb-3">
+                  Chemistry
+                </h3>
+                <p className="text-sm text-ink/60 leading-relaxed">
+                  We offer Chemistry tutoring for middle school and high
+                  school students. Chemistry at the University level is available for specific courses.
                 </p>
               </div>
             </div>

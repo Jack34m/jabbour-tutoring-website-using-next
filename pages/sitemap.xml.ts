@@ -19,6 +19,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     { url: "services", changefreq: "monthly", priority: 0.8 },
     { url: "subjects", changefreq: "monthly", priority: 0.8 },
     { url: "contact", changefreq: "monthly", priority: 0.8 },
+    { url: "careers", changefreq: "monthly", priority: 0.5 },
     { url: "blog", changefreq: "weekly", priority: 0.8 },
     {
       url: "tutoring-in-hammana",

@@ -24,7 +24,7 @@ Tutoring is essential for a healthy, productive, and effective school year. To y
 
 ### Good Tutoring Starts with Understanding the Student
 
-The best tutors don’t begin with a textbook — they start with the student. Every student has unique strengths, weaknesses, and learning styles.
+The best tutors don’t begin with a textbook they start with the student. Every student has unique strengths, weaknesses, and learning styles.
 Understanding the student is all about figuring out that student’s worries and how to address them. A good tutor would start by asking the following:
 Where is the student struggling?
 
@@ -46,7 +46,11 @@ In English, tutoring focuses on comprehension, writing skills, and fluency, not 
 
 In Science, lessons connect theories to real-world examples, allowing students to grasp the “why” behind the subject.
 
-This foundation means students don’t just pass the next test — they grow academically and independently.
+This foundation means students don’t just pass the next test, they grow academically and independently.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/L0YVKia-BYE?si=1uC5z6yZlTkaQt4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ### One-on-One Attention Makes the Difference
 

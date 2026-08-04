@@ -9,14 +9,41 @@ export default function AboutPage() {
   return (
     <>
       <Head>
-        <title>The start of Jabbour Tutoring</title>
+        <title>About Jabbour Tutoring | Private Tutors in Hammana &amp; Dbayeh</title>
         <meta
           name="description"
-          content="Learn about Jabbour Tutoring, a family-run service offering personalized Math, English, and Science lessons in Hammana and Dbayeh, Lebanon."
+          content="Learn about Jabbour Tutoring, a private tutoring service offering personalized lessons for all subjects in Hammana and Dbayeh, Lebanon."
+        />
+        <link rel="canonical" href="https://www.jabbourtutoring.com/about" />
+        <meta
+          property="og:title"
+          content="About Jabbour Tutoring | Private Tutors in Hammana & Dbayeh"
         />
         <meta
-        property="og:description"
-        content="Family-run tutoring service in Hammana & Dbayeh offering tailored Math, English & Science lessons for all Lebanese students."
+          property="og:description"
+          content="Private tutoring service in Hammana & Dbayeh offering tailored personalized lessons in all subjects for all Lebanese students."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.jabbourtutoring.com/about"
+        />
+        <meta
+          property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Jabbour Tutoring | Private Tutors in Hammana & Dbayeh"
+        />
+        <meta
+          name="twitter:description"
+          content="Private tutoring service in Hammana & Dbayeh offering tailored personalized lessons in all subjects for all Lebanese students."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.jabbourtutoring.com/logo.png"
         />
       </Head>
 
@@ -47,8 +74,8 @@ export default function AboutPage() {
             >
               English, Math, and Science{" "}
             </Link>{" "}
-            lessons for all grades. Our key focus is always on problem-solving,
-            development and academic catch-up. We bring passion, patience, and
+            lessons for all grades. Other subjects are also available upon request. Our key focus is always on problem-solving,
+            and addressing underlying weaknesses and gaps. We bring passion, patience, and
             personalized strategies to every lesson.
           </h3>
 
@@ -68,9 +95,7 @@ export default function AboutPage() {
                 James Jabbour
               </h2>
               <p className="text-sm text-ink/60 mt-3 leading-relaxed">
-                James is a private Mathematics and Physics tutor with over 3
-                years of tutoring experience. In his spare time, James enjoys
-                studying, reading and working out.
+                3 years of private tutoring experience, including in person, home visits and online tutoring. 
               </p>
             </div>
 
@@ -79,20 +104,17 @@ export default function AboutPage() {
               <div className="w-40 h-40 mb-5 rounded-full overflow-hidden ring-2 ring-gold-500/40">
                 <Image
                   src="/nicole.jpg"
-                  alt="Nicole Jabbour tutor"
+                  alt="Nicole Rached tutor"
                   width={160}
                   height={160}
                   className="object-cover w-full h-full"
                 />
               </div>
               <h2 className="text-lg font-serif font-semibold text-brand-800">
-                Nicole Jabbour
+                Nicole Rached
               </h2>
               <p className="text-sm text-ink/60 mt-3 leading-relaxed">
-                Nicole is a private English and Mathematics tutor. As a proud
-                graduate from AUST, Nicole holds 2 degrees in teaching, with
-                over 7 years of tutoring experience. In her spare time, she
-                enjoys writing poetry.
+                2 years of teaching experience at school and 2 years of tutoring experience including in person and online tutoring.  
               </p>
             </div>
           </div>

@@ -15,11 +15,7 @@ export default function HomePage() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": [
-                "EducationalOrganization",
-                "LocalBusiness",
-                "ProfessionalService",
-              ],
+              "@type": ["EducationalOrganization", "ProfessionalService"],
               name: "Jabbour Tutoring",
               image: "https://www.jabbourtutoring.com/logo.png",
               url: "https://www.jabbourtutoring.com",
@@ -76,7 +72,6 @@ export default function HomePage() {
                   streetAddress: "Chruch of Our Lady of the cave street",
                 },
               ],
-              priceRange: "$8 - $12",
               description:
                 "Jabbout Tutoring is a private tutoring service that offers private lessons in all subjects for all students. We offer in-person tutoring at Hammana and Dbayeh branches. For students outside of these areas, we offer online tutoring.",
               areaServed: [
@@ -86,7 +81,7 @@ export default function HomePage() {
                 },
                 {
                   "@type": "Place",
-                  name: "Dbaye, Matn District, Mount Lebanon, Lebanon",
+                  name: "Dbayeh, Matn District, Mount Lebanon, Lebanon",
                 },
               ],
               founder: [
@@ -105,10 +100,11 @@ export default function HomePage() {
                 "Private Science Tutoring",
                 "Online Tutoring",
                 "SAT Preparation",
-                "Lebanese Baccalaureate Preparation",
                 "Brevet Exam Preparation",
-                "International Baccalaureate", 
-                "GSCE preparation"
+                "Lebanese Baccalaureate Preparation",
+                "GCSE Preparation",
+                "International Baccalaureate (IB) Preparation",
+                "Advanced Placement (AP) Preparation",
               ],
               offers: {
                 "@type": "Offer",
@@ -127,11 +123,12 @@ export default function HomePage() {
             }),
           }}
         />
-        <title>Jabbour Tutoring, Private tutor in Hammana and Dbaye</title>
+        <title>Jabbour Tutoring, Private tutor in Hammana and Dbayeh</title>
         <meta
           name="description"
           content="Private Math, English, and Science tutoring in Hammana and Dbayeh, Lebanon. One-on-one lessons in person or online for all Lebanese students."
         />
+        <link rel="canonical" href="https://www.jabbourtutoring.com/" />
         <meta
           property="og:title"
           content="Jabbour Tutoring, Personalized Tutoring in Hammana and Dbayeh."
@@ -144,6 +141,19 @@ export default function HomePage() {
         <meta property="og:url" content="https://www.jabbourtutoring.com/" />
         <meta
           property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Jabbour Tutoring, Personalized Tutoring in Hammana and Dbayeh."
+        />
+        <meta
+          name="twitter:description"
+          content="Expert Math, English & Science tutoring in Hammana & Dbayeh. In-person & online lessons for all ages across Lebanon."
+        />
+        <meta
+          name="twitter:image"
           content="https://www.jabbourtutoring.com/logo.png"
         />
         <link rel="icon" href="/favicon.ico" />
@@ -196,15 +206,15 @@ export default function HomePage() {
               {[
                 {
                   title: "Truly One-on-One",
-                  body: "Every lesson is tailored to your child's pace, goals, and learning style — never a one-size-fits-all classroom.",
+                  body: "Every lesson is tailored to your child's pace, goals, and learning style. Teaching style is adapted to fit each student.",
                 },
                 {
                   title: "In-Person or Online",
-                  body: "Meet us in Hammana or Dbayeh, or join from anywhere in Lebanon through flexible online sessions.",
+                  body: "Meet us in Hammana or Dbayeh, or join from anywhere. Scheduling is flexible with lessons available in the afternoon or at night.",
                 },
                 {
                   title: "Real Progress Tracking",
-                  body: "Clear, measurable goals and regular parent updates so you always know how your student is progressing.",
+                  body: "Clear, measurable goals and regular parent updates so you always know how your student is progressing. Assessments are included in all plans. Typically, assessments are done every 2 weeks.",
                 },
               ].map((item) => (
                 <div key={item.title} className="px-4">
@@ -228,14 +238,21 @@ export default function HomePage() {
               Programs We Prepare You For
             </h2>
             <p className="text-ink/60 max-w-2xl mx-auto mb-12">
-              We tutor all subjects — and specialize in preparing students for
+              We tutor all subjects and specialize in preparing students for
               the exams and curricula that matter most.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {["SAT", "Lebanese Baccalaureate", "Brevet"].map((program) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              {[
+                "SAT",
+                "Brevet",
+                "Lebanese Baccalaureate",
+                "GCSE",
+                "International Baccalaureate (IB)",
+                "Advanced Placement (AP)",
+              ].map((program) => (
                 <div
                   key={program}
-                  className="bg-white border border-brand-900/10 rounded-xl p-8 hover:border-gold-500/50 transition-colors duration-300"
+                  className="bg-white border border-brand-900/10 rounded-xl p-8 flex items-center justify-center hover:border-gold-500/50 transition-colors duration-300"
                 >
                   <h3 className="text-lg font-serif font-semibold text-brand-800">
                     {program}
@@ -266,7 +283,7 @@ export default function HomePage() {
                   Hammana
                 </h3>
                 <p className="text-sm text-ink/60">
-                  Baabda District, Mount Lebanon — in-person &amp; online
+                  Baabda District, Mount Lebanon, in-person &amp; online
                   lessons.
                 </p>
               </Link>
@@ -278,7 +295,7 @@ export default function HomePage() {
                   Dbayeh
                 </h3>
                 <p className="text-sm text-ink/60">
-                  Metn District, Mount Lebanon — in-person &amp; online
+                  Metn District, Mount Lebanon, in-person &amp; online
                   lessons.
                 </p>
               </Link>

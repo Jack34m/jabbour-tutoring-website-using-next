@@ -17,6 +17,40 @@ export default function TutoringInDbayeh() {
           name="description"
           content="Personalized tutoring in Dbayeh for Math, English, and Science. One-on-one lessons, flexible timings, and online options. Book a free consultation."
         />
+        <link
+          rel="canonical"
+          href="https://www.jabbourtutoring.com/tutoring-in-Dbayeh"
+        />
+        <meta
+          property="og:title"
+          content="Private Tutoring in Dbayeh for Math, English & Science"
+        />
+        <meta
+          property="og:description"
+          content="Personalized tutoring in Dbayeh for Math, English, and Science. One-on-one lessons, flexible timings, and online options. Book a free consultation."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.jabbourtutoring.com/tutoring-in-Dbayeh"
+        />
+        <meta
+          property="og:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Private Tutoring in Dbayeh for Math, English & Science"
+        />
+        <meta
+          name="twitter:description"
+          content="Personalized tutoring in Dbayeh for Math, English, and Science. One-on-one lessons, flexible timings, and online options. Book a free consultation."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.jabbourtutoring.com/logo.png"
+        />
         {/* LocalBusiness schema for this location */}
         <script
           type="application/ld+json"

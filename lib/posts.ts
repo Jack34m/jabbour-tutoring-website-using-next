@@ -46,7 +46,15 @@ export async function getPostData(slug: string) {
 
   const { data, content } = matter(fileContents);
 
-  const processedContent = await remark().use(html).process(content);
+  // sanitize: false lets raw HTML (e.g. YouTube <iframe> embeds) through.
+  // remark-html only supports either full sanitization or none at all — a
+  // custom allow-list schema doesn't work because it still drops raw HTML
+  // nodes before sanitizing (see mdast-util-to-hast's allowDangerousHtml).
+  // Safe here because these markdown files are authored by us, not by site
+  // visitors.
+  const processedContent = await remark()
+    .use(html, { sanitize: false })
+    .process(content);
   const contentHtml = processedContent.toString();
 
   return {

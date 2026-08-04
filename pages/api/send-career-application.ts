@@ -5,16 +5,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("👉 Request method:", req.method);
-  console.log("👉 Request body:", req.body);
-
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Only POST requests allowed" });
   }
 
-  const { name, email, phone, subject, message } = req.body;
+  const { name, email, phone, languages, skills, experience, coverLetter } =
+    req.body;
 
-  if (!name || !email || !phone || !subject || !message) {
+  if (!name || !email || !phone || !languages || !skills || !coverLetter) {
     return res.status(400).json({ message: "Missing required fields" });
   }
 
@@ -30,20 +28,23 @@ export default async function handler(
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USER,
-      subject: `Contact Form: ${subject}`,
+      subject: `Career Application: ${name}`,
       text: `
         Name: ${name}
         Email: ${email}
         Phone: ${phone}
-        Subject: ${subject}
-        Message: ${message}
+        Languages: ${languages}
+        Skills: ${skills}
+        Tutoring Experience: ${experience || "N/A"}
+
+        Cover Letter:
+        ${coverLetter}
       `,
     });
 
-    console.log("✅ Email sent!");
-    return res.status(200).json({ message: "Email sent successfully" });
+    return res.status(200).json({ message: "Application sent successfully" });
   } catch (error) {
-    console.error("❌ Email error:", error);
+    console.error("❌ Career application email error:", error);
     return res.status(500).json({ message: "Something went wrong" });
   }
 }
